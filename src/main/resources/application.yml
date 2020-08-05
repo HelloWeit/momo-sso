@@ -1,0 +1,29 @@
+server:
+  port: 9010
+spring:
+  redis:
+    database: @redis.database@
+    host: @redis.host@
+    password: @redis.password@
+    port: @redis.port@
+    timeout: 5000
+    ssl: false
+    lettuce:
+      pool:
+        max-active: 8
+        min-idle: 0
+        max-wait: -1
+        max-idle: 8
+      shutdown-timeout: 100
+  session:
+    store-type: redis
+
+logging:
+  level:
+    root: info
+    org:
+      springframework:
+        security: info
+        web: info
+    cn:
+      weit: info

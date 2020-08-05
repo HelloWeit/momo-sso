@@ -1,0 +1,152 @@
+/*
+Template Name: Color Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7 & Bootstrap 4.0.0-Alpha 6
+Version: 3.0.0
+Author: Sean Ngu
+Website: http://www.seantheme.com/color-admin-v3.0/admin/apple/
+*/
+
+.navbar-logo i {
+    text-shadow: 3px -3px #b8daff;
+}
+.navbar-inverse .navbar-logo i {
+    text-shadow: 3px -3px #0d56a6;
+}
+
+.navbar.navbar-inverse .navbar-brand {
+    color: #fff !important;
+}
+.text-theme,
+.navbar-logo,
+.sidebar .sub-menu > li.active > a:before {
+    color: #000000;
+}
+.sidebar .nav>li>a .pull-right {
+    margin-top:15px;
+}
+.sidebar .nav .has-sub .sub-menu li> a:before {
+    content: '';
+    font-family: 'FontAwesome';
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 8px; 
+    width: 8px; 
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+}
+
+.sidebar .sub-menu  .has-sub .sub-menu > li > a:before {
+    content: '';
+    font-family: 'FontAwesome';
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 8px; 
+    width: 8px; 
+    background: #5BB460;
+    border-radius: 50%;
+}
+/* Added in v1.5 */
+
+.gradient-enabled .sidebar .nav > li.active > a, 
+.gradient-enabled .sidebar .nav > li.active > a:focus, 
+.gradient-enabled .sidebar .nav > li.active > a:hover,
+.gradient-enabled.page-sidebar-minified .sidebar .nav > li.has-sub.active:focus > a, 
+.gradient-enabled.page-sidebar-minified .sidebar .nav > li.has-sub.active:hover > a, 
+.gradient-enabled.page-sidebar-minified .sidebar .nav > li.has-sub.active > a,
+.gradient-enabled .label.label-theme,
+.gradient-enabled .btn.btn-scroll-to-top,
+.gradient-enabled .top-menu .nav > li.active > a, 
+.gradient-enabled .top-menu .nav > li.active > a:focus, 
+.gradient-enabled .top-menu .nav > li.active > a:hover {
+	color: #fff !important;
+	background: #24d0f4 !important;
+	background: -moz-linear-gradient(top,  #24d0f4 0%, #007aff 100%) !important;
+	background: -webkit-linear-gradient(top,  #24d0f4 0%,#007aff 100%) !important;
+	background: linear-gradient(to bottom,  #24d0f4 0%,#007aff 100%) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#24d0f4', endColorstr='#007aff',GradientType=0 ) !important;
+}
+.pace-progress {
+    background: #007aff;
+}
+.pace .pace-activity {
+    border-top-color: #007aff;
+    border-left-color: #007aff;
+}
+
+
+/* Added in v1.9 */
+
+.top-menu .nav > li.active > a, 
+.top-menu .nav > li.active > a:focus, 
+.top-menu .nav > li.active > a:hover {
+    background: #007aff;
+}
+
+/* add by bom begin */
+.sidebar, .sidebar-bg {
+    background: #42485b;
+}
+.navbar.navbar-default {
+    background: #ffffff;
+}
+.email-footer {
+    border-top: 0px solid #ccc;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    vertical-align: middle;
+}
+.label.label-linkedin {
+    background: #007bb6;
+}
+.label.label-yahoo {
+    background: #720e9e;
+}
+.navbar-nav > .dropdown{
+    color:#000000;
+}
+* {
+  font-family: "冬青黑体","微软雅黑", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+html,
+body {
+  font-family: "冬青黑体", "微软雅黑", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+/* The dropdown menu (ul)*/
+.dropdown-menu-box {
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 12px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.dropdown-menu-box>li>a:focus, .box>li>a:hover {
+    background: #eee;
+}
+.dropdown-menu-box>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    text-decoration: none;
+}
+/* add by bom end */
+
