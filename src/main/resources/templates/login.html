@@ -105,7 +105,8 @@
             
                 var username = $("#username").val();
                 var password = $("#password").val();
-                
+                var ref = location.search.replace('?url=','');
+
                 if( username == ''){
                     $("#login-tip").html("用户名不能为空");
                     $("#login-tip-icon").removeClass("hidden");
@@ -125,23 +126,23 @@
                 $("#login-tip-icon").addClass("fa-refresh");
                 
                 $.ajax({
-                    url: "/sapi/login",
+                    url: "/api/login",
                     type : "post",
                     //dataType: "json",
                     //contentType: "application/json;charset=UTF-8",
                     //data: JSON.stringify({"username": username, "password": password}),
                     data: "username=" + username + "&password=" + password,
                     success : function(result){
-                        if(result.status == 1){
+                        if(result.code == 200){
 							/*<![CDATA[*/
 							var link = /*[[@{/index}]]*/;
 							/*]]>*/
-						
-                            window.location.href = link;
+
+                            window.location.href = result.data;
                             console.log(result.data);
                             return false;
                         }
-                        if(result.status == 0){
+                        if(result.status == 400){
                             $(".btn-lg").attr("disabled",false);
                             $("#login-tip").html(result.info);
                             $("#login-tip-icon").removeClass("hidden");

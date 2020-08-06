@@ -13,6 +13,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.cache.NullUserCache;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
+
 /**
  * @author weitong
  */
@@ -27,7 +29,8 @@ public class MoAuthenticationProvider implements AuthenticationProvider {
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        String userName = (String) authentication.getPrincipal();
+        Map<String, String> principalMap = (Map<String, String>) authentication.getPrincipal();
+        String userName = principalMap.get("userName");
         UserDetails userDetails = userCache.getUserFromCache(userName);
         if (userDetails == null) {
             userDetails = userDetailsService.loadUserByUsername(userName);
@@ -36,7 +39,9 @@ public class MoAuthenticationProvider implements AuthenticationProvider {
         if (!StringUtils.equals("123456", password)) {
             throw new LogicException("用户名或密码错误");
         }
+
         userCache.putUserInCache(userDetails);
+
         return new MoLoginAuthenticationToken(userName, password, userDetails.getAuthorities());
     }
 

@@ -1,6 +1,7 @@
 package cn.weit.sso.inner;
 
 import cn.weit.sso.exception.LogicException;
+import com.google.common.collect.Maps;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +11,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 /**
  * @author weitong
@@ -27,7 +29,14 @@ public class MoAuthenticationFilter extends UsernamePasswordAuthenticationFilter
         if (StringUtils.isBlank(password)) {
             throw new LogicException("用户名或密码有误");
         }
-        MoLoginAuthenticationToken moLoginAuthenticationToken = new MoLoginAuthenticationToken(userName, password);
+        String ref = request.getParameter("ref");
+        if (StringUtils.isBlank(ref)) {
+            ref = "";
+        }
+        Map<String, String> principalMap = Maps.newHashMap();
+        principalMap.put("principal", userName);
+        principalMap.put("ref", ref);
+        MoLoginAuthenticationToken moLoginAuthenticationToken = new MoLoginAuthenticationToken(principalMap, password);
         moLoginAuthenticationToken.setDetails(authenticationDetailsSource.buildDetails(request));
         return this.getAuthenticationManager().authenticate(moLoginAuthenticationToken);
     }
